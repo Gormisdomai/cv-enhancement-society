@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Oxford CV Enhancement Society - The Status You Deserve</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/business-frontpage.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+
+</head>
+
+<body>
+    <script type="text/javascript">
+        function getJSON(url, cb){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.open('GET', url, true);
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4) {
+                    if(xmlhttp.status == 200) {
+                        var obj = JSON.parse(xmlhttp.responseText);
+                        cb(obj);
+                     }
+                }
+            };
+            xmlhttp.send(null);
+        }
+        getJSON('https://spreadsheets.google.com/feeds/list/1Zm74x83hZEVeI9VzNJCUAxxw6qwElA3MYBUjfdLGBqE/default/public/basic?alt=json', function(data){
+            entries = (data.feed.entry);
+            text = "";
+            for (var i = 0; i<entries.length; i++){
+                text += (entries[i].content.$t)
+            }
+            document.getElementById("members").innerHTML = text
+        });  
+    </script>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">CV Enhancement Society</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Image Background Page Header -->
+    <!-- Note: The background image is set within the business-casual.css file. -->
+    <header class="business-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="tagline">Oxford CV Enhancement Society</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-8">
+                <h2>What We Do</h2>
+                <p>We know you're busy. So we created the perfect society for ambitious, talented, and driven individuals at the University of Oxford who want to take a leadership role in student life - but without taking on another burdensome commitment. </p>
+                <p>With the CV enhancement society, you don’t need to come to any taster sessions, tryouts, trainings, talks, rehearsals, socials, drinks, dinners, meetings, or networking events. To maximise our members’ leadership potential, we have a rotating presidency: every day a new member becomes the President of the Society.</p>
+                <p>
+                    <a class="btn btn-default btn-lg" href="#">Join Now! &raquo;</a>
+                </p>
+            </div>
+            <div class="col-sm-4">
+                <h2>Contact Us</h2>
+                <address>
+                    <strong>CV Enhancement Society</strong>
+                    <br>University College
+                    <br>Oxford OX1
+                    <br>
+                </address>
+                <address>
+                    <abbr title="Email">E:</abbr> <a href="mailto:#">enquiries@oxcv.org</a>
+                </address>
+                <h2> {TODO} Our Comittee</h2>
+                <div id="members">
+                </div>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+        <h2> Testimonials </h2>
+        <br>
+        <div class="row">
+
+            <div class="col-sm-4">
+                <img class="img-circle img-responsive img-center" src="./rob.png" alt="">
+                <h3>Rob, PPE, Brasenose College:</h3>
+                <p>Finally a society which understands my basic needs! By cutting out superfluous procedural requirements, the Oxford CV Enhancement Society has distilled the Oxford society experience to its essential core. I hope to apply the skills I have gained as President by working as a strategic growth synergies executive in the premier digital solutions industry.</p>
+            </div>
+            <div class="col-sm-4">
+                <img class="img-circle img-responsive img-center" src="./liz.png" alt="">
+                <h3>Liz, Biochemistry, St Edmund Hall:</h3>
+                <p>I was a finalist, and between exam preparation, my college sportsball crewdates, and drinks and canapés with consulting firms, it felt like time was running out to improve my LinkedIn profile with extracurricular activities. But then I discovered the CV enhancement society. My work as a member and President of the society was surprisingly easy to fit into my schedule, but incredibly rewarding and beneficial.</p>
+            </div>
+            <div class="col-sm-4">
+                <img class="img-circle img-responsive img-center" src="./bob.png" alt="">
+                <h3>Bob, Archaeology and Anthropology, Kellogg College:</h3>
+                <p>The CV enhancement society provides a well-selected global network of driven, dedicated alumni, in many industries. The CV enhancement lifetime membership is an investment in your future.</p>
+            </div>
+        </div>
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-sm-4">
+                <img class="img-circle img-responsive img-center" src="./ann.png" alt="">
+                <h3>Ann, English Language and Literature, Wadham College:</h3>
+                <p>I found the CV society’s approach to leadership refreshing. It’s not about who you know. The CV enhancement society’s egalitarian model fights the entrenched structures of institutionalised privilege in Oxford. Thanks to the rotating presidency, committee members are regularly replaced by new people with fresh and radical ideas for leveraging this important role.</p>
+            </div>
+            <div class="col-sm-4">
+                <img class="img-circle img-responsive img-center" src="./amir.png" alt="">
+                <h3>Amir, Engineering, Blackfriars:</h3>
+                <p>I’ve always wanted to give back to others. Volunteering as the unpaid president of a student society seemed like the perfect way to bring a positive contribution to my community. The Oxford CV enhancement society works to improve young people’s chances on today’s tough job market - knowing that I’m helping others is worth much more to me than getting another prestigious internship</p>
+            </div>
+            <div class="col-sm-4">
+                <img class="img-circle img-responsive img-center" src="./jim.png" alt="">
+                <h3>Jim, Economics and Management, St Catherine’s College:</h3>
+                <p>I always knew I wanted to get involved in one of the hundreds of societies on offer at Oxford, but I struggled to find the one that would motivate me to actually attend or organise any events. Though I was passionate about demonstrating to employers that I am a team player with lots of initiative and grit, I realised I wasn’t really that keen on any sports, art forms, cultures, religions, sciences, humanities, or political movements. That’s when I discovered the CV enhancement society - becoming a member has allowed me to develop my interests and flourish as a student.</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+        <!-- /.row -->
+            <h2>FAQ</h2>
+                <h3>Is this real?</h3>
+                <p>Unfortunately, yes.</p>
+                <h3>What qualifications do I need to become a member?</h3>
+                <p>None</p>
+                <h3>How was the CV enhancement society founded?</h3>
+                <p>It was founded at University College as Societas Oxoniensis Curriculum Vitae Amplificationem. The exact date of foundation is disputed, but most sources agree it must have been closer to 1834 than to 1812.</p>
+                <h3>Can I put this on my CV?</h3>
+                <p>Yes, in fact you are contractually obligated to do so. Violation will result in immediate impeachment.</p>
+                <h3>How can I make my society an oxford cv enhancement society-certified student organisation?</h3>
+                <p>Contact your society's secretary and encourage them to apply through our sister organisation, the Oxford Society Enhancement Society.</p>
+                <h3>Am I allowed to hold office in another society as well as the oxford cv enhancement society?</h3>
+                <p>Yes, this is encouraged. In fact, the president of the oxford cv enhancement society is also president of the Oxford Society Enhancement Society and its governing body, Oxford Enhancement Societies, Ltd.</p>
+
+
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; CV Enhancement Society 2016</p>
+                </div>
+            </div>
+            <!-- /.row -->
+        </footer>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
